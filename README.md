@@ -33,23 +33,23 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
     ├─── dev-v2.0.json
     ├─── train-v1.1.json
     ├─── train-v2.0.json
-├─── initialize.py
+├─── initialize.py: Python script to initialize TF-IDF and BM25 based models. Models are saved as pickle files in `pretrained` folder
 ├─── pretrained
-    ├─── bm25.pkl
-    ├─── tf_idf.pkl
+    ├─── bm25.pkl: Initialized BM25 based model.
+    ├─── tf_idf.pkl: Initialized TF-IDF based model.
 ├─── README.md: README
 ├─── references
-    ├─── BERT.pdf
-    ├─── DPR_for_QA.pdf
+    ├─── BERT.pdf: Original paper of BERT model.
+    ├─── DPR_for_QA.pdf: Original paper of FaceBook DPR based on BERT.
 ├─── requirements.txt: requirements
-├─── retrieve.py
+├─── retrieve.py: Pyhton script to retrieve a context from a given question.
 ├─── src
-    ├─── __init__.py
-    ├─── bert.py
-    ├─── bm25.py
-    ├─── data.py
-    ├─── retriever.py
-    ├─── tf_idf.py
+    ├─── __init__.py: File to define src directory as a python package
+    ├─── bert.py: Implementation of Bi-Encoder BERT based retriever.
+    ├─── bm25.py: Implementation OKAPI BM25 based retriever.
+    ├─── data.py: Implemetation of data loading and Dataset class for SQuAD.
+    ├─── retriever.py: Implementation of parent class of each retriever.
+    ├─── tf_idf.py: Implementation of TF-IDF based retriever.
 </pre>
 
 ## Instructions to run 
