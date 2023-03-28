@@ -74,7 +74,9 @@ To retrieve a context from a given question run the following:
 python retrieve.py model_type question
 ```
 
-# Accuracies SQuAD v-1.1 Validation Set (dev-v1.1.json)
+# Results
+The accuracies of the models on SQuAD v-1.1 Validation Set (dev-v1.1.json) are reported bellow. The accuracy is simply computed as the percentage of context correctly (exact match with target) retrieved over the whole dataset. A retrieved context that contains the answer of the question but that was originally not the context associated to the question in the dataset are counted as non-correct. Calculating the accuracy this way make the task harder. 
+
 | Model Type | Top-1 Accuracy |     
 |-------------------|------------|
 | TF-IDF | 59.25% |       
