@@ -74,9 +74,7 @@ To retrieve a context from a given question run the following:
 python retrieve.py model_type question
 ```
 
-# Results
-
-### Accuracies SQuAD v-1.1 Validation Set (dev-v1.1.json)
+# Accuracies SQuAD v-1.1 Validation Set (dev-v1.1.json)
 | Model Type | Top-1 Accuracy |     
 |-------------------|------------|
 | TF-IDF | 59.25% |       
