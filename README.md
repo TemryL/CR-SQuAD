@@ -77,8 +77,9 @@ python retrieve.py model_type question
 # Results
 
 ### Accuracies SQuAD v-1.1 Validation Set (dev-v1.1.json)
-| Model Type | Top-1 Accuracy |       
+| Model Type | Top-1 Accuracy |     
+|-------------------|------------|
 | TF-IDF | 59.25% |       
 | BM25 | 77.60% |       
-| BERT |  |       
+| BERT | ? |       
 
