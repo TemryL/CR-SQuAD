@@ -1,7 +1,7 @@
 # Context Retrieval on SQuAD Dataset
 
 * [Getting started](#getting-started)
-    * [Project description](#project-description)
+    * [Description](#project-description)
     * [Data](#data)
 * [Reproduce results](#reproduce-results)
     * [Requirements](#Requirements)
@@ -10,7 +10,7 @@
 * [Results](#results)
 
 # Getting started
-This repository contains the codes used to produce the results presented in `report.pdf`
+
 ## Project description
 
 
