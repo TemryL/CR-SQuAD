@@ -19,14 +19,12 @@ The raw data are already available in the data folder.
 
 # Reproduce results
 ## Requirements
-
-- python=3.10.8
-- pytorch=1.13.1
-- pandas=1.5.2
-- scikit-learn=1.1.3
-- tqdm=4.64.1
-- matplotlib=3.6.2
-- seaborn=0.12.1
+- python==3.10.10
+- numpy==1.22.3
+- nltk==3.7
+- scikit-learn==1.0.2
+- pytorch==2.0.0
+- transformers==4.27.3
 
 ## Repo Architecture
 <pre>  
