@@ -1,6 +1,6 @@
 import numpy as np
 
-from src.models.retriever import Retriever
+from src.retriever import Retriever
 from sklearn.feature_extraction.text import CountVectorizer
 
 

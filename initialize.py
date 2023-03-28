@@ -2,8 +2,8 @@ import pickle
 import argparse
 
 from src.data import SQuAD
-from src.models.tf_idf import TFIDF_Retriever
-from src.models.bm25 import BM25_Retriever
+from src.tf_idf import TFIDF_Retriever
+from src.bm25 import BM25_Retriever
 
 
 def main(model_type, data_path):
