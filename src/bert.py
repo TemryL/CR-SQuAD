@@ -92,12 +92,12 @@ class BiEncoder(nn.Module):
     
     def save(self, epoch):
         # Save current model and losses
-        torch.save(self.state_dict(), 'pretrained/bert_epoch{}.pth'.format(epoch))
+        torch.save(self.state_dict(), 'pretrained/bi_encoder_epoch{}.pth'.format(epoch))
         
-        with open('pretrained/losses_epoch{}.pkl'.format(epoch), 'wb+') as f:
+        with open('pretrained/loss_history_epoch{}.pkl'.format(epoch), 'wb+') as f:
             pickle.dump(self.train_loss_history, f)
         
-        with open('pretrained/lr_epoch{}.pkl'.format(epoch), 'wb+') as f:
+        with open('pretrained/lr_history_epoch{}.pkl'.format(epoch), 'wb+') as f:
             pickle.dump(self.lr_history, f)
     
     def load_pretrained_model(self, model_path):
