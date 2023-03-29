@@ -50,7 +50,7 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
     ├─── __init__.py: File to define src directory as a python package.
     ├─── bert.py: Implementation of Bi-Encoder BERT based retriever.
     ├─── bm25.py: Implementation of OKAPI BM25 based retriever.
-    ├─── data.py: Implemetation of data loading and Dataset class for SQuAD.
+    ├─── data.py: Implementation of data loading and Dataset class for SQuAD.
     ├─── retriever.py: Implementation of parent class of each retriever.
     ├─── tf_idf.py: Implementation of TF-IDF based retriever.
 ├─── train.py: Python script to train the BiEncoder BERT based model. Produce log every epoch in `pretrained` folder.
