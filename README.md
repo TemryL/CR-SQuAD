@@ -83,8 +83,8 @@ Example:
 ```
 python retrieve.py "BM25" "What is a common practice in official corporal punishment?"
 
-   - BM25 retriever successfully loaded.
-   - Context retrieved in 0.04s:
+>>>- BM25 retriever successfully loaded.
+>>>- Context retrieved in 0.04s:
    Official corporal punishment, often by caning, remains commonplace in schools in some Asian, African and Caribbean countries. For details of individual countries see School corporal punishment.
 
 ```
