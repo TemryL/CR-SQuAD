@@ -81,7 +81,7 @@ python retrieve.py model_type question
 ```
 Example:
 ```
-$ python retrieve.py "BM25" "What is a common practice in official corporal punishment?"
+python retrieve.py "BM25" "What is a common practice in official corporal punishment?"
 
    - BM25 retriever successfully loaded.
    - Context retrieved in 0.04s:
