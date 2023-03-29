@@ -12,8 +12,7 @@ def main(data_path, nb_epochs, batch_size):
     
     # Train model
     model = BiEncoder()
-    #model.train_(data_loader, nb_epochs=nb_epochs, batch_size=batch_size)
-    model.save(epoch=0)
+    model.train_(data_loader, nb_epochs=nb_epochs, batch_size=batch_size)
 
 
 if __name__ == '__main__':
