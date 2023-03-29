@@ -73,17 +73,19 @@ To retrieve a context from a given question run the following:
 python retrieve.py model_type question
 ```
 
+`YOU DO NOT NEED` to execute the following commands if you already have downloaded and copied the `retrievers` folder in the root of the repo.
+
 To train from scratch the BiEncoder BERT based model run:
 ```
 python train.py data_path nb_epochs batch_size  
 ```
-Training BERT model is a long process and should be done on GPUs. `YOU DO NOT NEED` to execute the previous command if you already have downloaded and copied the `retrievers` folder in the root of the repo.
+Training BERT model is a long process and should be done on GPUs. 
 
 To initialize and get the accuracy of TF-IDF, BM25 and BERT based model run:
 ```
 python initialize.py model_type data_path
 ```
-Beware that initializing the model can take few minutes and will produce pickle files in the `retrievers` folder. `YOU DO NOT NEED` to execute the previous command if you already have downloaded and copied the `retrievers` folder in the root of the repo.
+Beware that initializing the model can take few minutes and will produce pickle files in the `retrievers` folder. 
 
 # Results
 The accuracies of the models on SQuAD v-1.1 Validation Set (dev-v1.1.json) are reported bellow. The accuracy is simply computed as the percentage of context correctly (exact match with target) retrieved over the whole dataset. A retrieved context that contains the answer of the question but that was originally not the context associated to the question in the dataset are counted as non-correct. Calculating the accuracy this way make the task harder. 
