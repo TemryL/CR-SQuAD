@@ -1,4 +1,5 @@
 import time
+import pickle
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -53,6 +54,8 @@ class BiEncoder(nn.Module):
         
         self.train()
         for e in range(nb_epochs):
+            # Save current model and losses 
+            self.save(epoch=e)
             train_loss = 0
             batch_step = 0
             
@@ -86,6 +89,17 @@ class BiEncoder(nn.Module):
                 for param_group in optimizer.param_groups:
                     self.lr_history.append(param_group['lr'])
     
+    def save(self, epoch):
+        # Save current model and losses
+        torch.save(self.state_dict(), 'pretrained/bert_epoch{}.pth'.format(epoch))
+        
+        with open('pretrained/losses_epoch{}.pkl'.format(epoch), 'wb+') as f:
+            pickle.dump(self.train_loss_history, f)
+        
+        with open('pretrained/lr_epoch{}.pkl'.format(epoch), 'wb+') as f:
+            pickle.dump(self.lr_history, f)
+    
     def load_pretrained_model(self, model_path):
         m_state_dict = torch.load(model_path, map_location=torch.device(self.device))
         self.load_state_dict(m_state_dict)
+    
