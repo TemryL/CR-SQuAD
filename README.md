@@ -43,9 +43,9 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
 ├─── requirements.txt: requirements
 ├─── retrieve.py: Pyhton script to retrieve a context from a given question.
 ├─── retrievers
-    ├─── bert.pkl: Initialized BERT based model.
-    ├─── bm25.pkl: Initialized BM25 based model.
-    ├─── tf_idf.pkl: Initialized TF-IDF based model.
+    ├─── bert.pkl: Initialized BERT based retriever.
+    ├─── bm25.pkl: Initialized BM25 based retriever.
+    ├─── tf_idf.pkl: Initialized TF-IDF based retriever.
 ├─── src
     ├─── __init__.py: File to define src directory as a python package.
     ├─── bert.py: Implementation of Bi-Encoder BERT based retriever.
