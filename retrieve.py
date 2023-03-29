@@ -15,6 +15,11 @@ def main(model_type, question):
             retriever = pickle.load(f)
             print("\n- BM25 retriever successfully loaded.")
     
+    elif model_type == "BERT":
+        with open('pretrained/tf_idf.pkl', 'rb') as f:
+            retriever = pickle.load(f)
+            print("\n- BERT retriever successfully loaded.")
+    
     else:
         raise ValueError("Unexpected 'model_type' argument. Should be either 'TF_IDF', 'BM25' or 'BERT'.")
     

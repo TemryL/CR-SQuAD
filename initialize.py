@@ -4,6 +4,7 @@ import argparse
 from src.data import SQuAD
 from src.tf_idf import TFIDF_Retriever
 from src.bm25 import BM25_Retriever
+from src.bert import BiEncoder, BERT_Retriever
 
 
 def main(model_type, data_path):
@@ -15,19 +16,29 @@ def main(model_type, data_path):
         retriever = TFIDF_Retriever(contexts, questions)
         print("- TF_IDF retriever achieves: {:.2f}% of accuracy.".format(100*retriever.accuracy))
         
-        with open('pretrained/tf_idf.pkl', 'wb+') as f:
+        with open('retrievers/tf_idf.pkl', 'wb+') as f:
             pickle.dump(retriever, f)
-            print("- TF_IDF retriever successfully saved at {}.".format(data_path))
+            print("- TF_IDF retriever successfully saved at: 'retrievers/tf_idf.pkl'")
     
     elif model_type == "BM25":
         print("\nInitializing BM25 retriever and computing accuracy...")
         retriever = BM25_Retriever(contexts, questions)
         print("- BM25 retriever achieves: {:.2f}% of accuracy.".format(100*retriever.accuracy))
         
-        with open('pretrained/bm25.pkl', 'wb+') as f:
+        with open('retrievers/bm25.pkl', 'wb+') as f:
             pickle.dump(retriever, f)
-            print("- BM25 retriever successfully saved at {}.".format(data_path))
-
+            print("- BM25 retriever successfully saved at: '/retrievers/bm25.pkl'")
+    
+    elif model_type == "BERT":
+        print("\nInitializing BERT retriever and computing accuracy...")
+        model = BiEncoder()
+        model.load_pretrained_model('pretrained/bert_epoch0.pth')
+        retriever = BERT_Retriever(contexts, questions, bi_encoder=model)
+        print("- BERT retriever achieves: {:.2f}% of accuracy.".format(100*retriever.accuracy))
+        
+        with open('retrievers/bert.pkl', 'wb+') as f:
+            pickle.dump(retriever, f)
+            print("- BERT retriever successfully saved at: '/retrievers/bert.pkl'")
     
     else:
         raise ValueError("Unexpected 'model_type' argument. Should be either 'TF_IDF' or 'BM25'.")

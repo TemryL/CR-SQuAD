@@ -1,5 +1,4 @@
 import argparse
-import torch
 
 from src.data import SQuAD
 from src.bert import BiEncoder
@@ -13,7 +12,8 @@ def main(data_path, nb_epochs, batch_size):
     
     # Train model
     model = BiEncoder()
-    model.train_(data_loader, nb_epochs=nb_epochs, batch_size=batch_size)
+    #model.train_(data_loader, nb_epochs=nb_epochs, batch_size=batch_size)
+    model.save(epoch=0)
 
 
 if __name__ == '__main__':

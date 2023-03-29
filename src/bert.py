@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from src.retriever import Retriever
 from transformers import DPRContextEncoder, DPRContextEncoderTokenizer
 from transformers import DPRQuestionEncoder, DPRQuestionEncoderTokenizer
 from transformers import get_linear_schedule_with_warmup
@@ -102,4 +103,29 @@ class BiEncoder(nn.Module):
     def load_pretrained_model(self, model_path):
         m_state_dict = torch.load(model_path, map_location=torch.device(self.device))
         self.load_state_dict(m_state_dict)
+
+
+class BERT_Retriever(Retriever):
+    def __init__(self, contexts, questions, bi_encoder):
+        super().__init__(contexts)
+        self.bi_encoder = bi_encoder
+        self.q_encoder = bi_encoder.q_encoder
+        self.c_encoder = bi_encoder.c_encoder
+        self.q_tokenizer = bi_encoder.q_tokenizer
+        self.c_tokenizer = bi_encoder.c_tokenizer
+        self.encoded_contexts = self.encode_contexts()
+        self.accuracy = self._get_accuracy(questions)
     
+    def retrieve(self, question):
+        encoded_q = self.bi_encoder.encode(question, self.q_encoder, self.q_tokenizer)
+        scores = encoded_q.mm(self.encoded_contexts.t())
+        context_id = torch.argmax(scores).item()
+        return context_id, self.contexts[context_id] 
+    
+    def encode_contexts(self):
+        encoded = []
+        self.bi_encoder.eval()
+        with torch.no_grad():
+            for context in self.contexts:
+                encoded.append(self.bi_encoder.encode(context, self.c_encoder, self.c_tokenizer))
+        return torch.cat(encoded)
