@@ -57,7 +57,14 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
 </pre>
 
 ## Instructions to run 
-First make sure to have all the requirements. To start retrieving without training and initializing the retrievers, please download the `retrievers` folder [here](https://drive.switch.ch/index.php/s/pX2yzNL8s8Ipp8d) and place it in the root of the repository (see repo architecture).
+First make sure to have all the requirements. 
+You might need to manually install:
+
+```
+python -m nltk.downloader all-corpora
+```
+
+To start retrieving without training and initializing the retrievers, please download the `retrievers` folder [here](https://drive.switch.ch/index.php/s/pX2yzNL8s8Ipp8d) and place it in the root of the repository (see repo architecture).
 
 The following commands give more details about the positional arguments and a description of the process done while running:
 
@@ -71,6 +78,15 @@ Please run them before running the following. The commands showed bellow have to
 To retrieve a context from a given question run the following:
 ```
 python retrieve.py model_type question
+```
+Example:
+```
+python retrieve.py "BM25" "What is a common practice in official corporal punishment?"
+
+- BM25 retriever successfully loaded.
+- Context retrieved in 0.04s:
+Official corporal punishment, often by caning, remains commonplace in schools in some Asian, African and Caribbean countries. For details of individual countries see School corporal punishment.
+
 ```
 
 `YOU DO NOT NEED` to execute the following commands if you already have downloaded and copied the `retrievers` folder in the root of the repo.
