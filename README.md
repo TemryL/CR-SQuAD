@@ -33,7 +33,7 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
     ├─── dev-v2.0.json
     ├─── train-v1.1.json
     ├─── train-v2.0.json
-├─── initialize.py: Python script to initialize TF-IDF and BM25 based models. Models are saved as pickle files in `pretrained` folder.
+├─── initialize.py: Python script to initialize TF-IDF, BM25 and BERT based retrievers. Retrievers are saved as pickle files in `retrievers` folder.
 ├─── pretrained
     ├─── bi_encoder.pth: Pretrained BiEncoder BERT based model.
 ├─── README.md: README
