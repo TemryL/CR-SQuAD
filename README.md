@@ -57,16 +57,16 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
 </pre>
 
 ## Instructions to run 
-First make sure to have all the requirements.
+First make sure to have all the requirements. To start retrieving without training and initializing the retrievers, please download the `retrievers` folder [here](https://drive.switch.ch/index.php/s/pX2yzNL8s8Ipp8d) and place it in the root of the repository (see repo architecture).
 
 The following commands give more details about the positional arguments and a description of the process done while running:
 
 ```
+python retrieve.py -h
 python train.py -h
 python initialize.py -h
-python retrieve.py -h
 ```
-Please run them before running the following. The commands showed bellow have to be executed in the same order to keep consistency. To start retrieving without training and initializing the retrievers, please download the `retrievers` folder here and place it in the root of the repository (see repo architecture).
+Please run them before running the following. The commands showed bellow have to be executed in the same order to keep consistency. 
 
 To retrieve a context from a given question run the following:
 ```
@@ -94,5 +94,5 @@ The accuracies of the models on SQuAD v-1.1 Validation Set (dev-v1.1.json) are r
 |-------------------|------------|
 | TF-IDF | 59.25% |       
 | BM25 | 77.60% |       
-| BERT | ? |       
+| BERT | Training in process... |       
 
