@@ -62,9 +62,9 @@ First make sure to have all the requirements. To start retrieving without traini
 The following commands give more details about the positional arguments and a description of the process done while running:
 
 ```
+python retrieve.py -h
 python train.py -h
 python initialize.py -h
-python retrieve.py -h
 ```
 Please run them before running the following. The commands showed bellow have to be executed in the same order to keep consistency. 
 
