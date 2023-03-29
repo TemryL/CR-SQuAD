@@ -6,17 +6,17 @@ import argparse
 def main(model_type, question):
     # Load retriever
     if model_type == "TF_IDF":
-        with open('pretrained/tf_idf.pkl', 'rb') as f:
+        with open('retrievers/tf_idf.pkl', 'rb') as f:
             retriever = pickle.load(f)
             print("\n- TF_IDF retriever successfully loaded.")
     
     elif model_type == "BM25":
-        with open('pretrained/tf_idf.pkl', 'rb') as f:
+        with open('retrievers/tf_idf.pkl', 'rb') as f:
             retriever = pickle.load(f)
             print("\n- BM25 retriever successfully loaded.")
     
     elif model_type == "BERT":
-        with open('pretrained/tf_idf.pkl', 'rb') as f:
+        with open('retrievers/tf_idf.pkl', 'rb') as f:
             retriever = pickle.load(f)
             print("\n- BERT retriever successfully loaded.")
     
@@ -44,7 +44,7 @@ if __name__ == "__main__":
         "question",
         metavar="question",
         type=str,
-        help="The question from SQuAD dataset as a string",
+        help="The question from SQuAD dataset as a string.",
     )
     args = parser.parse_args()
     

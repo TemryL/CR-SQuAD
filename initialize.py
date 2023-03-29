@@ -46,13 +46,13 @@ def main(model_type, data_path):
 
 if __name__ == "__main__":    
     parser = argparse.ArgumentParser(
-        description="Initialize TF_IDF or BM25 retriever and save it in pickle file."
+        description="Initialize TF_IDF, BM25 or BERT retriever and save it in pickle file."
     )
     parser.add_argument(
         "model_type",
         metavar="model_type",
         type=str,
-        help="An string defining the model type to initialize. Can be either 'TF_IDF' or 'BM25'.",
+        help="An string defining the model type to initialize. Can be either 'TF_IDF', 'BM25' or 'BERT'.",
     )
     parser.add_argument(
         "data_path",
