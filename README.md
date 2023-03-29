@@ -57,7 +57,7 @@ Context retrieval is performed on SQuaD dataset. The Stanford Question Answering
 </pre>
 
 ## Instructions to run 
-First make sure to have all the requirements. To start retrieving without training and initializing the retrievers, please download the `retrievers` folder [here]() and place it in the root of the repository (see repo architecture).
+First make sure to have all the requirements. To start retrieving without training and initializing the retrievers, please download the `retrievers` folder [here](https://drive.switch.ch/index.php/s/pX2yzNL8s8Ipp8d) and place it in the root of the repository (see repo architecture).
 
 The following commands give more details about the positional arguments and a description of the process done while running:
 
