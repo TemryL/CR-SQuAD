@@ -110,5 +110,5 @@ The accuracies of the models on SQuAD v-1.1 Validation Set (dev-v1.1.json) are r
 |-------------------|------------|
 | TF-IDF | 59.25% |       
 | BM25 | 77.60% |       
-| BERT | Training in process... |       
+| BERT | 84.79% |       
 
