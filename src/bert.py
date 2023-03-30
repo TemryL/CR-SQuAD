@@ -81,14 +81,14 @@ class BiEncoder(nn.Module):
                     batch_time = time.time() - start
                     start = time.time()
                     
+                    for param_group in optimizer.param_groups:
+                        self.lr_history.append(param_group['lr'])
+                    
                     if verbose:
                         print("Batch step: {}/{}, Train loss: {:.4f}, Time: {:.2f}s/batch".format(batch_step, 
                                                                                             nb_batch_steps, 
                                                                                             self.train_loss_history[-1],
                                                                                             batch_time))
-                
-                for param_group in optimizer.param_groups:
-                    self.lr_history.append(param_group['lr'])
     
     def save(self, epoch):
         # Save current model and losses
