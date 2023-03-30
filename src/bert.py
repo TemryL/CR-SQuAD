@@ -54,11 +54,11 @@ class BiEncoder(nn.Module):
         scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=nb_warmup_steps, num_training_steps=nb_batch_steps)
         
         self.train()
+        batch_step = 0
         for e in range(nb_epochs):
             # Save current model and losses 
             self.save(epoch=e)
             train_loss = 0
-            batch_step = 0
             
             start = time.time()
             for train_step, (questions, contexts) in enumerate(data_loader):
