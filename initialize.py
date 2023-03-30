@@ -32,7 +32,7 @@ def main(model_type, data_path):
     elif model_type == "BERT":
         print("\nInitializing BERT retriever and computing accuracy...")
         model = BiEncoder()
-        model.load_pretrained_model('pretrained/bert_epoch0.pth')
+        model.load_pretrained_model('pretrained/bert_epoch19.pth')
         retriever = BERT_Retriever(contexts, questions, bi_encoder=model)
         print("- BERT retriever achieves: {:.2f}% of accuracy.".format(100*retriever.accuracy))
         
